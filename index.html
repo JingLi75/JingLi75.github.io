@@ -1,172 +1,301 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Jing Li - Home Page</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jing Li</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap">
+<style>
+:root {
+  --bg: #ffffff; --bg2: #f5f7fa; --fg: #1c1c1c; --fg2: #5a5a6a;
+  --accent: #2774AE; --accent-dk: #1e5d8a; --border: #e2e5ea;
+  --ff: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  --r: 4px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141418; --bg2: #1e1e24; --fg: #e8e8f0; --fg2: #9090a8;
+    --accent: #5fa8e0; --accent-dk: #7fbde8; --border: #2e2e3a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141418; --bg2: #1e1e24; --fg: #e8e8f0; --fg2: #9090a8;
+  --accent: #5fa8e0; --accent-dk: #7fbde8; --border: #2e2e3a;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--ff); background: var(--bg); color: var(--fg); font-size: 17px; line-height: 1.65; }
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 24px;
+}
+.nav-inner {
+  max-width: 860px; margin: 0 auto; display: flex; align-items: center; height: 52px;
+}
+.nav-name {
+  font-weight: 700; font-size: 1.05rem; color: var(--fg); text-decoration: none;
+  margin-right: auto; letter-spacing: -0.01em; cursor: pointer;
+}
+.nav-links { display: flex; list-style: none; }
+.nav-links li button {
+  display: block; padding: 0 16px; height: 52px; background: none; border: none;
+  border-bottom: 2px solid transparent; font-family: var(--ff); font-size: 0.95rem;
+  color: var(--fg2); cursor: pointer; transition: color 0.15s, border-color 0.15s;
+}
+.nav-links li button:hover, .nav-links li button.active {
+  color: var(--accent); border-bottom-color: var(--accent);
+}
+.page { display: none; max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+.page.active { display: block; }
+/* HOME */
+.home-layout { display: flex; gap: 52px; align-items: flex-start; }
+.profile-col { flex-shrink: 0; width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.profile-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--border); margin-bottom: 16px; }
+.profile-name { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; color: var(--fg); margin-bottom: 8px; line-height: 1.2; }
+.profile-title-line { font-size: 0.875rem; color: var(--fg2); line-height: 1.4; margin-bottom: 14px; }
+.profile-links { display: flex; flex-direction: column; gap: 7px; width: 100%; text-align: left; }
+.profile-link { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--fg2); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+.profile-link:hover { color: var(--accent); }
+.profile-link svg { flex-shrink: 0; }
+.bio-col { flex: 1; min-width: 0; }
+.bio-col p { font-size: 1rem; line-height: 1.75; color: var(--fg); margin-bottom: 1em; }
+.bio-col p:last-child { margin-bottom: 0; }
+.wordcloud-wrap { margin-top: 32px; text-align: center; }
+.wordcloud-wrap img { max-width: 100%; height: auto; opacity: 0.92; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .wordcloud-wrap img { filter: invert(1) hue-rotate(180deg) brightness(0.9); }
+}
+:root[data-theme="dark"] .wordcloud-wrap img { filter: invert(1) hue-rotate(180deg) brightness(0.9); }
+/* SECTION HEADINGS */
+.page h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; padding-bottom: 10px; border-bottom: 2px solid var(--accent); margin-bottom: 28px; color: var(--fg); }
+/* RESEARCH */
+.research-item { margin-bottom: 44px; }
+.research-item h3 { font-size: 1.05rem; font-weight: 700; color: var(--fg); margin-bottom: 10px; }
+.research-item p { color: var(--fg); font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.9em; }
+.research-item p:last-child { margin-bottom: 0; }
+.research-fig { margin: 20px 0; }
+.research-fig img { width: 100%; height: auto; border-radius: var(--r); border: 1px solid var(--border); }
+.fig-caption { font-size: 0.82rem; color: var(--fg2); margin-top: 7px; line-height: 1.4; font-style: italic; }
+/* STATS BAR */
+.stats-bar { display: flex; gap: 24px; flex-wrap: wrap; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 16px 20px; margin-bottom: 28px; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat-num { font-size: 1.3rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.stat-label { font-size: 0.78rem; color: var(--fg2); text-transform: uppercase; letter-spacing: 0.05em; }
+/* PUBLICATIONS */
+.pub-section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg2); margin: 28px 0 14px; }
+.pub-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.pub-item { display: flex; gap: 14px; align-items: flex-start; }
+.pub-num { font-size: 0.82rem; color: var(--fg2); font-variant-numeric: tabular-nums; min-width: 28px; padding-top: 1px; flex-shrink: 0; text-align: right; }
+.pub-content { min-width: 0; flex: 1; }
+.pub-content p { font-size: 0.95rem; color: var(--fg); line-height: 1.55; }
+.pub-author-me { font-weight: 700; color: var(--fg); }
+.pub-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; padding: 1px 6px; border-radius: 3px; margin-left: 4px; vertical-align: middle; }
+.badge-cover { background: #fff3cd; color: #856404; }
+.badge-choice { background: #d1ecf1; color: #0c5460; }
+.badge-review { background: #e8eaf6; color: #3949ab; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .badge-cover { background: #4a3800; color: #ffd060; }
+  :root:not([data-theme="light"]) .badge-choice { background: #003344; color: #7dd4e8; }
+  :root:not([data-theme="light"]) .badge-review { background: #1a1e4a; color: #9fa8e8; }
+}
+:root[data-theme="dark"] .badge-cover { background: #4a3800; color: #ffd060; }
+:root[data-theme="dark"] .badge-choice { background: #003344; color: #7dd4e8; }
+:root[data-theme="dark"] .badge-review { background: #1a1e4a; color: #9fa8e8; }
+/* OUTREACH */
+.outreach-block { margin-bottom: 36px; }
+.outreach-block h3 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg2); margin-bottom: 14px; }
+.outreach-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.outreach-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 0.95rem; line-height: 1.55; }
+.outreach-date { font-size: 0.8rem; color: var(--fg2); min-width: 60px; flex-shrink: 0; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.outreach-content { min-width: 0; flex: 1; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--accent-dk); }
+@media (max-width: 600px) {
+  .home-layout { flex-direction: column; align-items: center; }
+  .profile-col { width: 100%; }
+  .profile-links { align-items: center; text-align: center; }
+  .profile-link { justify-content: center; }
+  .nav-links li button { padding: 0 10px; font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name" onclick="showPage('home')">Jing Li</span>
+    <ul class="nav-links">
+      <li><button onclick="showPage('home')" id="btn-home" class="active">Home</button></li>
+      <li><button onclick="showPage('research')" id="btn-research">Research</button></li>
+      <li><button onclick="showPage('publications')" id="btn-publications">Publications</button></li>
+      <li><button onclick="showPage('outreach')" id="btn-outreach">Outreach</button></li>
+    </ul>
+  </div>
+</nav>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="image"><img src="images/profile.png" alt="" img style='height: 100%; width: 100%' class="center"/></span>
-						</div>
-						<div class="content">
-							<div class="inner" autocapitalize="off">
-								<h1>Jing Li</h1>
-								<p> Hello! I'm Jing Li, currently a postdoc in <a href="https://zhu-research.net/index.html">Zhu Research Lab</a> at UCLA. I previously worked as a postdoc in <a href="http://hoffmann.caltech.edu/">Hoffmann Lab</a> at Caltech. I got my PhD degree under the advisement of <a href="http://www.yaopkulab.com/">Dr. Maosheng Yao</a> at Peking University. Click on the following icons to know more about what I do, and here to download my <a href="CV_J Li_UCLA_Jan 2023.pdf" download>CV</a></p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">About Me</a></li>
-								<li><a href="#research">Research</a></li>
-								<li><a href="#publications">Publications</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- About Me -->
-							<article id="intro">
-								<h2 class="major">About Me</h2>
-								<p>My name is Jing Li. I am currently a postdoc in Zhu Research Lab at UCLA. My current research focuses on exploring health impacts of different sources of fine and ultrafine aerosol particles. I previously worked as a postdoc in Hoffmann Lab at Caltech, where I led the project of developing portable and rapid microbial analysis tools for resource-limited settings. I finished my doctoral degree in 2018 under the advisement of Dr. Maosheng Yao at Peking University, China. My PhD project addressed some significant questions in environmental health field, particularly in bioaerosols and health.</p>
-                                <hr />
-								<h3>Research Interests</h3>
-                                	<ul>
-										<li>Bioaerosols</li>
-										<li>Antibiotic resistance genes (ARGs)</li>
-										<li>Ambient particulate matter (PM) toxicity</li>
-                                        <li>Development of digital microbial analysis tools for environmental samples</li>
-									</ul>
-                                <hr />
-									<h3>Education</h3>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Degree</th>
-													<th>Institution</th>
-													<th>Year</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Ph.D. in Environmental Science</td>
-													<td>Peking University, China</td>
-													<td>2013-2018</td>
-												</tr>
-												<tr>
-													<td>B.S. in Environmental Engineering</td>
-													<td>University of Science & Technology, Beijing, China</td>
-													<td>2009-2013</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-							</article>
-
-						<!-- Research -->
-							<article id="research">
-								<h2 id="researchtitle" class="major">Research</h2>
-								<span class="image main"><img src="images/Research.jpg" alt="" /></span>
-								<p>My research aims to understand the <b><a href="#exposure">exposure risks of ambient particulate matter (PM) and its biological contents (bioaerosols)</a></b> as well as the <b><a href="#aerial">aerial transport of airborne antibiotic resistance genes (ARGs) on a global scale</a></b> by collecting and analyzing automobile air conditioning filters worldwide. My research also focuses on the development and application of <b><a href="#analysistools">digital microbial analysis tools</a></b> for the underdeveloped part of the world. The overarching goal of my research is better understanding the health impacts of environmental microbes to inform effective decision-making.</p>
-                                <h3 id="analysistools" class="major">Microbial analysis tools</h3>
-                                <span class="image main"><img src="images/Research 1.jpg" alt="" /></span>
-                                <p>Quantification of pathogens (e.g. SARS-CoV-2, <i>Salmonella</i> Typhi) in wastewaters and ambient waters is critical for environmental surveillance and for early detection of outbreaks. My postdoc research has been focusing on the development and application of portable and rapid microbial detection methods for the underdeveloped part of the world. One of the significant achievements is the membrane-based in-gel loop-mediated isothermal amplification (mgLAMP) system. Absolute quantification of SARS-CoV-2 can be achieved using our integrated device prototype in large volumes of environmental water and wastewater samples within an 1h-timeframe.</p>
-                                <a href="#researchtitle" class="button primary icon solid fa-arrow-up">Back to top</a></li>
-                        <p></p>
-                                                       
-                                    <h3 id="aerial" class="major">Airborne antibiotic resistance genes (ARGs) </h3>
-                                <span class="image main"><img src="images/Research 2.jpg" alt="" /></span>
-								<p>We are now facing a looming health threat from antibiotic-resistant bacteria (ARB) and associated antibiotic resistance genes (ARGs). The airborne transmission of ARGs has received little attention. Airborne ARGs when inhaled could likewise induce the disequilibrium of respiratory tract bacterial community and thus affect the immune system if up-taken and further expressed by human-borne bacteria. Due to the aerial transport, even remote regions without antibiotics usage could be exposed to “second hand” ARGs. My work uncovered for the first time that the global urban air is being contaminated by ARGs, and that different cities are challenged with varying health risks associated with airborne ARG exposure.</p>
-                        <a href="#researchtitle" class="button primary icon solid fa-arrow-up">Back to top</a></li>
-                        <p></p>
-                                    <h3 id="exposure" class="major">Particulate matter (PM) toxicity</h3>
-                                <span class="image main"><img src="images/Research 3.jpg" alt="" /></span>
-								<p>Air quality is often assessed using PM mass concentration without considering its toxicity, thus possibly leading to improper control policies or inadequate health protection. My work revealed that although for certain cities with higher PM mass concentration, the PM toxicity per unity of mass, however, were lower compared to those with lower PM mass concentration levels. My work also showed that the PM toxicity was influenced by microbial fractions such as endotoxin and fungi. We highlight the importance in optimizing the current air quality control measures by considering the toxicity factor and its microbial constituents.</p>
-                               <a href="#researchtitle" class="button primary icon solid fa-arrow-up">Back to top</a></li>                     
-                                
-							</article>
-
-						<!-- Publications -->
-							<article id="publications">
-								<h2 class="major">Publications</h2>
-								<span class="image main"><img src="images/word-cloud_tr.jpeg" alt="" /></span>
-								<p><a href="https://scholar.google.com/citations?user=C3ykF0AAAAAJ&hl=en">Google Scholar profile</a></p>
-                                <h3 class="major">First/Corresponding author</h2>
-                                <p>Yanzhe Zhu, Xunyi Wu, Alan Gu, Leopold Dobelle, Clément A. Cid, <b><u>Jing Li*</b></u>, and Michael R. Hoffmann* (2022), Membrane-based in-gel Loop-Mediated Isothermal Amplification (mgLAMP) System for SARS-CoV-2 Quantification in Environmental Waters, <i>Environmental Science & Technology</i>: 56, 2, 862–873. <b>(Selected as the Non-PCR winner in Rapid Wastewater SARS-CoV-2 Testing Challenge held by Water Environmental Foundation)</b> <a href="https://doi.org/10.1021/acs.est.1c04623">Link</a></p>
-                                <p><b><u>Jing Li</b></u>, Yanzhe Zhu, Xunyi Wu, Michael R Hoffmann* (2020), Rapid detection methods for bacterial pathogens in ambient waters at the point of sample collection: A brief review, <i> Infectious Diseases</i>, 71 (Supplement_2): S84-S90.<a href="https://doi.org/10.1093/cid/ciaa498">Link</a></p>
-                                <p><b><u>Jing Li</b></u>, Haoxuan Chen, Xinyue Li, Minfei Wang, Xiangyu Zhang, Junji Cao*, Fangxia Shen, Yan Wu, Siyu Xu, Hanqing Fan, Guillaume Da, Rujin Huang, Jing Wang, Chak K. Chan, Alma Lorelei de Jesus, Lidia Morawska, Maosheng Yao* (2019), Differing toxicity of ambient particulate matter (PM) in global cities, <i>Atmospheric Environment</i>, 212, 305-315.<a href="https://doi.org/10.1016/j.atmosenv.2019.05.048">Link</a></p>
-                                <p><b><u>Jing Li</b></u>, Junji Cao, Yongguan Zhu, Qinglin Chen, Fangxia Shen, Yan Wu, Siyu Xu, Hanqing Fan, Guillaume Da, Rujin Huang, Jing Wang, Alma Lorelei de Jesus, Lidia Morawska, Chak K. Chan, Jordan Peccia, Maosheng Yao* (2018), Global survey of antibiotic resistance genes in air, <i>Environmental Science and Technology</i>, 52: 10975-10984. <b>(Selected as the ES&T Cover, ES&T’s Best Papers of 2018 and ACS Editors’ Choice, Recommended in Faculty Opinions, Featured by ACS as an “Embargoed Press Release”, AAAS EurekAlert!, China Daily, Yahoo! News, etc.)</b><a href="https://doi.org/10.1021/acs.est.8b02204">Link</a></p>
-                                <p><b><u>Jing Li</b></u>, Maosheng Yao* (2018), State-of-the-art status on airborne antibiotic resistant bacteria and antibiotic resistance genes (in Chinese), <i>Chinese Journal of Preventive Medicine</i>, 52 (4): 440-445.</b><a href="https://doi.org/10.3760/cma.j.issn.0253-9624.2018.04.021">Link</a></p>
-                                <p><b><u>Jing Li</b></u>, Liantong Zhou, Xiangyu Zhang, Caijia Xu, Liming Dong*, Maosheng Yao* (2016), Bioaerosol emissions and detection of airborne antibiotic resistance genes from a wastewater treatment plant, <i>Atmospheric Environment</i>, 124, 404-412.<a href="https://doi.org/10.1016/j.atmosenv.2015.06.030">Link</a></p>
-                                <p><b><u>Jing Li</b></u>, Qi Chen, Xinyue Li, Maosheng Yao* (2014), Rapid point-of-use water purification using nanoscale zero valent iron (nZVI) particles, <i>Chinese Science Bulletin</i>, 59 (29/30): 3926-3934.<a href="https://link.springer.com/article/10.1007/s11434-014-0440-1">Link</a></p>
-                                <p><b><u>Jing Li</b></u>, Mingzhen Li, Fangxia Shen, Zhuanglei Zou, Maosheng Yao*, Chang-Yu Wu (2013), Characterization of biological aerosol exposure risks from automobile air conditioning system, <i>Environmental Science and Technology</i>, 47: 10660-10666. <a href="https://doi.org/10.1021/es402848d">Link</a></p>
-                <h3 class="major">Co-author</h2>
-                <p>Alan Y. Gu, Yanzhe Zhu, <b><u>Jing Li</b></u>, Michael R. Hoffmann* (2021), Speech-generated aerosol settling times and viral viability can improve COVID-19 transmission prediction, <i>Environmental Science: Atmospheres</i>, 2: 34-45.</p>
-                <p>Haijie Tong*, Fobang Liu, Alexander Filippi, Jake Wilson, Andrea M Arangio, Yun Zhang, Siyao Yue, Steven Lelieveld, Fangxia Shen, Helmi-Marja K Keskinen, <b><u>Jing Li</b></u>, Haoxuan Chen, Ting Zhang, Thorsten Hoffmann, Pingqing Fu, William H Brune, Tuukka Petäjä, Markku Kulmala, Maosheng Yao, Thomas Berkemeier, Manabu Shiraiwa, Ulrich Pöschl (2021), Aqueous-phase reactive species formed by fine particulate matter from remote forests and polluted urban air, <i>Atmospheric Chemistry and Physics</i>, 21: 10439–10455.</p>
-                <p>Yanzhe Zhu, <b><u>Jing Li</b></u>, Xingyu Lin, Xiao Huang, Michael R. Hoffmann* (2021). A hydrogel beads based platform for single-cell phenotypic analysis and digital molecular detection, <i>ACS Applied Bio Materials</i>, 4 (3): 2664-2674.</p>
-                <p>Siwen Wang, Yanzhe Zhu, Yang Yang, <b><u>Jing Li</b></u>, Michael R. Hoffmann* (2020), Electrochemical cell lysis of gram-positive and gram-negative bacteria: DNA extraction from environmental water samples, <i>Electrochimica Acta</i>, 135864.</p> 
-                <p>Xunyi Wu, Xiao Huang, Yanzhe Zhu, <b><u>Jing Li</b></u>, Michael R. Hoffmann* (2020), Synthesis and Application of Superabsorbent Polymer Microspheres for Rapid Concentration and Quantification of Microbial Pathogens in Ambient Water, <i>Separation and Purification Technology</i>, 116540.</p>
-                <p>Haoxuan Chen, Xiangyu Zhang, Ting Zhang, Xinyue Li, <b><u>Jing Li</b></u>, Yang Yue, Minfei Wang, Yunhao Zheng, Hanqing Fan, Jing Wang, and Maosheng Yao* (2020), Ambient PM Toxicity Is Correlated with Expression Levels of Specific MicroRNAs, <i>Environmental Science & Technology</i>, 54 (16): 10227-10236.</p>
-                <p>Haoxuan Chen, <b><u>Jing Li</b></u>, Xiangyu Zhang, Xinyue Li, Maosheng Yao*, Gengfeng Zheng* (2018), Automated in vivo nano-sensing of breath-borne protein biomarkers, <i>Nano Letters</i>, 18: 4716-4726.
-                <p>Yunhao Zheng, <b><u>Jing Li</b></u>, Haoxuan Chen, Ting Zhang, Xinyue Li, Minfei Wang, Maosheng Yao* (2018), Bioaerosol research: Yesterday, today and tomorrow (in Chinese), <i>Chinese Science Bulletin</i>, 63: 878-894. </p>
-                <p>Yang Yue, Haoxuan Chen, Ari Setyan, Miriam Elser, Maria Dietrich, <b><u>Jing Li</b></u>, Ting Zhang, Xiangyu Zhang, Yunhao Zheng, Jing Wang*, Maosheng Yao* (2018), Size-resolved endotoxin and oxidizing potential of ambient particles in Beijing and Switzerland, <i>Environmental Science and Technology</i>, 52 (12): 6816-6824.</p>
-                <p>Kai Wei, Zhuanglei Zou, Yunhao Zheng, <b><u>Jing Li</b></u>, Fangxia Shen, Changyu Wu, Yan Wu, Min Hu, Maosheng Yao* (2016), Ambient bioaerosol particle dynamics observed during haze and sunny days in Beijing,<i>Science of the Total Environment</i>, 15 (550): 751-759.</p>
-                <p>Kai Wei#, Yunhao Zheng#, <b><u>Jing Li</b></u>#, Fangxia Shen, Zhuanglei Zou, Hanqing Fan, Xinyue Li, Chang-yu Wu, Maosheng Yao* (2015), Microbial aerosol characteristics in highly polluted and near pristine environments featuring different climatic conditions, <i>Science Bulletin</i>, 60 (16):1439-1447. (#Authors contribute equally)</p>
-                <p>Pengpeng Huang, Zhengfang Ye, Wuming Xie, Qi Chen, <b><u>Jing Li</b></u>, Zhencheng Xu, Maosheng Yao* (2013), Rapid magnetic removal of aqueous heavy metals and their relevant mechanisms using nanoscale zero valent iron (nZVI) particles, <i>Water Research</i>, 47: 4050-4058.</p>
-                <p>Qi Chen#, <b><u>Jing Li</b></u>#, Yan Wu, Fangxia Shen, Maosheng Yao* (2013), Biological responses of Gram-positive and Gram-negative bacteria to nZVI (Fe0), Fe2+ and Fe3+, <i>RSC Advances</i>, 3: 13835-13842. (#Authors contribute equally)</p>
-                <p>Qi Chen, Min Gao, <b><u>Jing Li</b></u>, Fangxia Shen, Yan Wu, Zhenqiang Xu, Maosheng Yao* (2012), Inactivation and magnetic separation of bacteria from liquid suspensions using electrosprayed and nonelectrosprayed nZVI particles: Observations and mechanisms, <i>Environmental Science and Technology</i>, 46 (4): 2360-2367.</p>
-                    <h3 class="major">Patents</h2>
-                <p>Membrane-Based in-Gel Loop-Mediated Isothermal Amplification (mgLAMP) System Enables Rapid Quantification of SARS-CoV-2 in Large-Volume Environmental Waters (2021). Michael R. Hoffmann, <b><u>Jing Li</b></u>, Yanzhe Zhu, Xunyi Wu, Alan Gu, Léopold Dobelle, Clément A. Cid. US Patent Number US20220162686A1. International Patent Number WO2022115187A1.<a href="https://patents.google.com/patent/US20220162686A1/en?oq=US+Patent+Number+US20220162686A1.+International+Patent+Number+WO2022115187A1.+">Link</a></p>  
-
-                                    
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								    <h3 class="major">Mailing Address</h3>
-                                <p>UCLA Fielding School of Public Health<br>650 Charles E. Young Drive South<br>51-295A CHS<br>Los Angeles, CA 90095</p>
-                                                                   <h3 class="major">Phone</h3>
-                                <p>+1-626-615-0782</p>
-                                <h3 class="major">Email</h3>
-                                <p> <a href="mailto:jingli75@ucla.edu" class="icon solids alt fa-envelope"><span class="label"></a>  jingli75@ucla.edu</p>
-							</article>
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="home-layout">
+    <div class="profile-col">
+      <img class="profile-photo" src="photo.jpg" alt="Jing Li">
+      <p class="profile-name">Jing Li</p>
+      <p class="profile-title-line">Associate Project Scientist<br>Dept. of Environmental Health Sciences<br>UCLA</p>
+      <div class="profile-links">
+        <a class="profile-link" href="mailto:jingli75@ucla.edu">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          Email
+        </a>
+        <a class="profile-link" href="https://scholar.google.com/citations?user=C3ykF0AAAAAJ&hl=en" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Google Scholar
+        </a>
+        <a class="profile-link" href="CV_Jing_Li.pdf" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          CV
+        </a>
+      </div>
+    </div>
+    <div class="bio-col">
+      <p>Hello! I am Jing Li. I am currently an Associate Project Scientist in the Department of Environmental Health Sciences at UCLA. Previously, I worked as a postdoctoral researcher in the Department of Environmental Science and Engineering at Caltech. I earned my Ph.D. in Environmental Science from Peking University.</p>
+      <p>My research lies at the intersection of climate change, air pollution, and environmental justice. I investigate how climate change amplifies air pollution exposures and disparities, with a particular focus on indoor air pollution in vulnerable and overburdened communities.</p>
+      <p>I currently lead a California Air Resources Board (CARB)-funded <a href="https://ww2.arb.ca.gov/residential-appliances-diverse-california-communities-emission-exposure-and-health-impacts-toxic" target="_blank">RESPECT study</a> as Principal Investigator that profiles toxic air contaminant emissions from residential appliances and evaluates exposure and health disparities across diverse communities in California.</p>
+      <p>My earlier work also included characterizing particulate matter toxicity and microbial fractions worldwide and developing field-deployable microbial detection methods for pandemic response in low-resource settings.</p>
+      <div class="wordcloud-wrap">
+        <img src="wordcloud.png" alt="Word cloud of research topics">
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- RESEARCH -->
+<div class="page" id="page-research">
+  <h2>Research</h2>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; 2022 by Jing Li.</p>
-					</footer>
+  <div class="research-item">
+    <h3>Indoor Air Pollution and Environmental Justice</h3>
+    <p>Indoor air pollution is an important but understudied contributor to population health, particularly for communities that experience disproportionate environmental burdens. I've played a leading role in a <a href="https://ww2.arb.ca.gov/indoor-air-quality-california-new-evidence-and-environmental-justice-implications" target="_blank">CARB-funded project</a> to update California's 2005 indoor air quality report for the California Legislature, systematically reviewing more than 700 peer-reviewed studies to synthesize evidence on indoor air pollutants, sources, health effects, environmental justice disparities, regulations, and mitigation strategies. The project also incorporated community perspectives through interviews with 32 residents from overburdened communities.</p>
+    <div class="research-fig">
+      <img src="fig1.jpg" alt="Research figure">
+    </div>
+    <p>Part of my work also focuses on wildfire smoke and demonstrates that indoor exposure can reveal substantial, and sometimes greater, disparities than outdoor metrics alone. In a national analysis of 72,537 U.S. census tracts, I found that disadvantaged communities experienced significantly higher estimated indoor wildfire PM&#8322;.&#8325; exposures, highlighting how indoor infiltration can amplify exposure disparities that may not be captured by outdoor measurements alone.</p>
+    <div class="research-fig">
+      <img src="fig2.jpg" alt="Research figure">
+    </div>
+  </div>
 
-			</div>
+  <div class="research-item">
+    <h3>Residential Combustion, Exposure, and Policy &mdash; The RESPECT Study</h3>
+    <p>I currently serve as Principal Investigator of the CARB-funded <a href="https://ww2.arb.ca.gov/residential-appliances-diverse-california-communities-emission-exposure-and-health-impacts-toxic" target="_blank">RESPECT study</a> (Residential Appliances in Diverse California Communities: Emission, Exposure, and Health Impacts of Toxic Air Contaminants). The project characterizes volatile organic compound (VOC) emissions from residential stoves, space heaters, and water heaters in 65 homes across diverse California communities&mdash;approximately half in disadvantaged communities. By integrating emissions measurements, exposure assessment, risk assessment, and modeling, we aim to understand how residential combustion contributes to indoor air pollution and whether exposures are distributed inequitably. The resulting data will help inform California&#8217;s transition toward zero-emission residential appliances while providing evidence on how climate and energy policies may affect environmental health across different communities.</p>
+    <div class="research-fig">
+      <img src="fig3.jpg" alt="Research figure">
+    </div>
+  </div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+  <div class="research-item">
+    <h3>Environmental Microbiology and Innovative Exposure Assessment</h3>
+    <p>During my Ph.D. at Peking University, I investigated spatial and temporal variations in particulate matter toxicity and microbial content. I developed a vehicle air-conditioning filter-based approach to collect particulate matter across 19 cities worldwide, enabling large-scale comparisons of aerosol toxicity, and conducted a global survey of airborne antibiotic resistance genes published in <em>Environmental Science &amp; Technology</em>&mdash;selected as the journal cover, an ACS Editors&#8217; Choice, and one of ES&amp;T&#8217;s 11 Best Papers of 2018. I received the Sheldon K. Friedlander Award from the American Association for Aerosol Research for my doctoral dissertation.</p>
+    <div class="research-fig">
+      <img src="fig4.jpg" alt="Research figure">
+    </div>
+    <p>At Caltech, I led the development of the mgLAMP platform, a patented technology for rapid SARS-CoV-2 quantification in wastewater (US Patent No. US20220162686A1). Designed to enable point-of-sampling analysis without centralized laboratory infrastructure, it was recognized by the Water Environment Federation&#8217;s Rapid Wastewater SARS-CoV-2 Testing Challenge and subsequently licensed.</p>
+    <div class="research-fig">
+      <img src="fig5.jpg" style="width:auto;max-width:100%;display:block;margin:0 auto;border:none" alt="Research figure">
+    </div>
+  </div>
+</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<!-- PUBLICATIONS -->
+<div class="page" id="page-publications">
+  <h2>Publications</h2>
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num">29</span><span class="stat-label">Peer-Reviewed Papers</span></div>
+    <div class="stat"><span class="stat-num">2,031+</span><span class="stat-label">Total Citations</span></div>
+    <div class="stat"><span class="stat-num">20</span><span class="stat-label">h-index</span></div>
+  </div>
+  <p class="pub-section-label">Under Review / Revision</p>
+  <ul class="pub-list">
+    <li class="pub-item"><span class="pub-num">&mdash;</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, Q. Nie, Y. Yao, H. Chen, P. Boo, Q. Yu, M. Niu, Y. Zhu*. Metal Concentrations in Surface Dust Following the 2025 Los Angeles Fires. <span class="pub-badge badge-review">In Revision</span></p></div></li>
+    <li class="pub-item"><span class="pub-num">&mdash;</span><div class="pub-content"><p>Y. Yao, Q. Nie, <span class="pub-author-me">J. Li</span>, M. Niu, Y. Fan, Q. Yu, D. Garcia-Gonzales, H. Chen, F. Gao, M. Jerrett, Y. Zhu*. Toxic metals enriched in fine particulate matter during the 2025 Los Angeles wildfires. <span class="pub-badge badge-review">In Revision</span></p></div></li>
+    <li class="pub-item"><span class="pub-num">&mdash;</span><div class="pub-content"><p>C. Barnes*, ..., Y. Zhu, <span class="pub-author-me">J. Li</span>, T. Benmarhnia, et al. Climate change increased the likelihood of wildfire disaster in highly exposed Los Angeles area. <span class="pub-badge badge-review">Submitted</span></p></div></li>
+  </ul>
+  <p class="pub-section-label" style="margin-top:32px">First / Co-First / Corresponding Author</p>
+  <ul class="pub-list">
+    <li class="pub-item"><span class="pub-num">29</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, X. Liu, Q. Yu, Y. Zhu* (2026). From Outdoor to Indoor: Amplified Inequities in Wildfire PM&#8322;.&#8325; Exposure Across the Contiguous United States. <em>Environmental Science &amp; Technology</em>, 60(26): 18733&ndash;18744.</p></div></li>
+    <li class="pub-item"><span class="pub-num">28</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, M. Bot, X. Liu, Y. Yao, R.A. Ophoff, Y. Zhu* (2026). Detection of SARS-CoV-2 RNA on Air Purifier Filters in University Spaces Without Symptomatic or Confirmed Cases. <em>Aerosol Science and Technology</em>, 60(5): 440&ndash;449.</p></div></li>
+    <li class="pub-item"><span class="pub-num">27</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, Y. Zhu* (2025). The cost of clean air: Global disparities in reducing indoor wildfire-related PM&#8322;.&#8325; exposure. <em>Science Advances</em>, 11: eady0890.</p></div></li>
+    <li class="pub-item"><span class="pub-num">26</span><div class="pub-content"><p>Y. Zhu, X. Wu, A. Gu, L. Dobelle, C.A. Cid, <span class="pub-author-me">J. Li*</span>, M.R. Hoffmann* (2022). Membrane-based in-gel loop-mediated isothermal amplification (mgLAMP) system for SARS-CoV-2 quantification in environmental waters. <em>Environmental Science &amp; Technology</em>, 56(2): 862&ndash;873.</p></div></li>
+    <li class="pub-item"><span class="pub-num">25</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, Y. Zhu, X. Wu, M.R. Hoffmann* (2020). Rapid detection methods for bacterial pathogens in ambient waters at the point of sample collection: A brief review. <em>Clinical Infectious Diseases</em>, 71(S2): S84&ndash;S90.</p></div></li>
+    <li class="pub-item"><span class="pub-num">24</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, H. Chen, X. Li, M. Wang, X. Zhang, J. Cao*, F. Shen, Y. Wu, S. Xu, H. Fan, G. Da, R. Huang, J. Wang, C.K. Chan, A.L. de Jesus, L. Morawska, M. Yao* (2019). Differing toxicity of ambient particulate matter (PM) in global cities. <em>Atmospheric Environment</em>, 212: 305&ndash;315.</p></div></li>
+    <li class="pub-item"><span class="pub-num">23</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, J. Cao, Y. Zhu, Q. Chen, F. Shen, Y. Wu, S. Xu, H. Fan, G. Da, R. Huang, J. Wang, A.L. de Jesus, L. Morawska, C.K. Chan, J. Peccia, M. Yao* (2018). Global survey of antibiotic resistance genes in air. <em>Environmental Science &amp; Technology</em>, 52(19): 10975&ndash;10984.<span class="pub-badge badge-cover">ES&amp;T Cover</span><span class="pub-badge badge-choice">ACS Editors&#8217; Choice</span></p></div></li>
+    <li class="pub-item"><span class="pub-num">22</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, L. Zhou, X. Zhang, C. Xu, L. Dong*, M. Yao* (2016). Bioaerosol emissions and detection of airborne antibiotic resistance genes from a wastewater treatment plant. <em>Atmospheric Environment</em>, 124: 404&ndash;412.</p></div></li>
+    <li class="pub-item"><span class="pub-num">21</span><div class="pub-content"><p>K. Wei#, Y. Zheng#, <span class="pub-author-me">J. Li#</span>, F. Shen, Z. Zou, H. Fan, X. Li, C.-Y. Wu, M. Yao* (2015). Microbial aerosol characteristics in highly polluted and near pristine environments. <em>Science Bulletin</em>, 60(16): 1439&ndash;1447.</p></div></li>
+    <li class="pub-item"><span class="pub-num">20</span><div class="pub-content"><p><span class="pub-author-me">Jing Li</span>, Q. Chen, X. Li, M. Yao* (2014). Rapid point-of-use water purification using nanoscale zero valent iron (nZVI) particles. <em>Chinese Science Bulletin</em>, 59(29/30): 3926&ndash;3934.</p></div></li>
+    <li class="pub-item"><span class="pub-num">19</span><div class="pub-content"><p><span class="pub-author-me">J. Li#</span>, M. Li#, F. Shen, Z. Zou, M. Yao*, C.-Y. Wu (2013). Characterization of biological aerosol exposure risks from automobile air conditioning system. <em>Environmental Science &amp; Technology</em>, 47(18): 10660&ndash;10666.</p></div></li>
+    <li class="pub-item"><span class="pub-num">18</span><div class="pub-content"><p>Q. Chen#, <span class="pub-author-me">J. Li#</span>, Y. Wu, F. Shen, M. Yao* (2013). Biological responses of Gram-positive and Gram-negative bacteria to nZVI (Fe&#8304;), Fe&#178;&#8314; and Fe&#179;&#8314;. <em>RSC Advances</em>, 3: 13835&ndash;13842.</p></div></li>
+  </ul>
+  <p class="pub-section-label" style="margin-top:32px">Co-Author</p>
+  <ul class="pub-list">
+    <li class="pub-item"><span class="pub-num">17</span><div class="pub-content"><p>H. Chen, Q. Nie, Q. Yu, <span class="pub-author-me">J. Li</span>, M. Niu, Y. Yao, P. Boo, ..., Y. Zhu* (2026). Characterizing Post-Fire Fine and Ultrafine Particles in the 2025 Eaton Fire Burn Zone and Nearby Areas. <em>Environmental Science &amp; Technology Letters</em>, 13(5): 728&ndash;736.</p></div></li>
+    <li class="pub-item"><span class="pub-num">16</span><div class="pub-content"><p>N. Ho, S. Dhayade, Y. Zhang, Y. Zhang, <span class="pub-author-me">J. Li</span>, Y. Li, Y. Shen, Y. Zhu, F. Gao* (2026). Beyond spatiotemporal modeling: a review of machine learning for traffic-related air pollution. <em>npj Clean Air</em>, 2(1): 33.</p></div></li>
+    <li class="pub-item"><span class="pub-num">15</span><div class="pub-content"><p>Y. Yao, D. Garcia-Gonzales, <span class="pub-author-me">J. Li</span>, M. Niu, Q. Nie, M. Jerrett, Y. Zhu* (2026). Indoor and Outdoor Volatile Organic Compound Levels during and after the 2025 Los Angeles Wildfires. <em>Environmental Science &amp; Technology Letters</em>, 13(1): 70&ndash;75.</p></div></li>
+    <li class="pub-item"><span class="pub-num">14</span><div class="pub-content"><p>M. Qiu*, D. Chen, M. Kelp, <span class="pub-author-me">J. Li</span>, G. Huang, M. Danesh Yazdi (2025). The rising threats of wildland-urban interface fires in the era of climate change: The Los Angeles 2025 fires. <em>The Innovation</em>, 6(5): 100835.</p></div></li>
+    <li class="pub-item"><span class="pub-num">13</span><div class="pub-content"><p>F. Shen*, M. Niu, H. Chen, T. Zhang, <span class="pub-author-me">J. Li</span>, H. Tong, Y. Wu (2024). Nonlinear proinflammatory effect of short-term PM&#8322;.&#8325; exposure: A potential role of lipopolysaccharide. <em>Journal of Environmental Sciences</em>, 136: 292&ndash;300.</p></div></li>
+    <li class="pub-item"><span class="pub-num">12</span><div class="pub-content"><p>T. Ma, H. Chen, Y.-P. Liao, J. Li, X. Wang, L. Li, <span class="pub-author-me">J. Li</span>, Y. Zhu*, T. Xia* (2023). Differential toxicity of electronic cigarette aerosols from different generations of devices. <em>Environment &amp; Health</em>, 1(5): 315&ndash;323.</p></div></li>
+    <li class="pub-item"><span class="pub-num">11</span><div class="pub-content"><p>A.Y. Gu, Y. Zhu, <span class="pub-author-me">J. Li</span>, M.R. Hoffmann* (2021). Speech-generated aerosol settling times and viral viability can improve COVID-19 transmission prediction. <em>Environmental Science: Atmospheres</em>, 2: 34&ndash;45.</p></div></li>
+    <li class="pub-item"><span class="pub-num">10</span><div class="pub-content"><p>H. Tong*, F. Liu, A. Filippi, ..., <span class="pub-author-me">J. Li</span>, H. Chen, ..., U. P&ouml;schl (2021). Aqueous-phase reactive species formed by fine particulate matter from remote forests and polluted urban air. <em>Atmospheric Chemistry and Physics</em>, 21: 10439&ndash;10455.</p></div></li>
+    <li class="pub-item"><span class="pub-num">9</span><div class="pub-content"><p>Y. Zhu, <span class="pub-author-me">J. Li</span>, X. Lin, X. Huang, M.R. Hoffmann* (2021). A hydrogel beads based platform for single-cell phenotypic analysis and digital molecular detection. <em>ACS Applied Bio Materials</em>, 4(3): 2664&ndash;2674.</p></div></li>
+    <li class="pub-item"><span class="pub-num">8</span><div class="pub-content"><p>S. Wang, Y. Zhu, Y. Yang, <span class="pub-author-me">J. Li</span>, M.R. Hoffmann* (2020). Electrochemical cell lysis of gram-positive and gram-negative bacteria: DNA extraction from environmental water samples. <em>Electrochimica Acta</em>, 338: 135864.</p></div></li>
+    <li class="pub-item"><span class="pub-num">7</span><div class="pub-content"><p>X. Wu, X. Huang, Y. Zhu, <span class="pub-author-me">J. Li</span>, M.R. Hoffmann* (2020). Synthesis and Application of Superabsorbent Polymer Microspheres for Rapid Concentration and Quantification of Microbial Pathogens in Ambient Water. <em>Separation and Purification Technology</em>, 239: 116540.</p></div></li>
+    <li class="pub-item"><span class="pub-num">6</span><div class="pub-content"><p>H. Chen, X. Zhang, T. Zhang, X. Li, <span class="pub-author-me">J. Li</span>, Y. Yue, M. Wang, Y. Zheng, H. Fan, J. Wang, M. Yao* (2020). Ambient PM Toxicity Is Correlated with Expression Levels of Specific MicroRNAs. <em>Environmental Science &amp; Technology</em>, 54(16): 10227&ndash;10236.</p></div></li>
+    <li class="pub-item"><span class="pub-num">5</span><div class="pub-content"><p>H. Chen, <span class="pub-author-me">J. Li</span>, X. Zhang, X. Li, M. Yao*, G. Zheng* (2018). Automated in vivo nano-sensing of breath-borne protein biomarkers. <em>Nano Letters</em>, 18: 4716&ndash;4726.</p></div></li>
+    <li class="pub-item"><span class="pub-num">4</span><div class="pub-content"><p>Y. Yue, H. Chen, A. Setyan, M. Elser, M. Dietrich, <span class="pub-author-me">J. Li</span>, T. Zhang, X. Zhang, Y. Zheng, J. Wang*, M. Yao* (2018). Size-resolved endotoxin and oxidizing potential of ambient particles in Beijing and Switzerland. <em>Environmental Science &amp; Technology</em>, 52(12): 6816&ndash;6824.</p></div></li>
+    <li class="pub-item"><span class="pub-num">3</span><div class="pub-content"><p>K. Wei, Z. Zou, Y. Zheng, <span class="pub-author-me">J. Li</span>, F. Shen, C. Wu, Y. Wu, M. Hu, M. Yao* (2016). Ambient bioaerosol particle dynamics observed during haze and sunny days in Beijing. <em>Science of the Total Environment</em>, 550: 751&ndash;759.</p></div></li>
+    <li class="pub-item"><span class="pub-num">2</span><div class="pub-content"><p>P. Huang, Z. Ye, W. Xie, Q. Chen, <span class="pub-author-me">J. Li</span>, Z. Xu, M. Yao* (2013). Rapid magnetic removal of aqueous heavy metals using nanoscale zero valent iron (nZVI) particles. <em>Water Research</em>, 47(12): 4050&ndash;4058.</p></div></li>
+    <li class="pub-item"><span class="pub-num">1</span><div class="pub-content"><p>Q. Chen, M. Gao, <span class="pub-author-me">J. Li</span>, F. Shen, Y. Wu, Z. Xu, M. Yao* (2012). Inactivation and magnetic separation of bacteria from liquid suspensions using electrosprayed and nonelectrosprayed nZVI particles. <em>Environmental Science &amp; Technology</em>, 46(4): 2360&ndash;2367.</p></div></li>
+  </ul>
+  <p class="pub-section-label" style="margin-top:32px">Patent</p>
+  <ul class="pub-list">
+    <li class="pub-item"><span class="pub-num">1</span><div class="pub-content"><p>M.R. Hoffmann, <span class="pub-author-me">J. Li</span>, Y. Zhu, X. Wu, A. Gu, L. Dobelle, C.A. Cid (2021). Membrane-Based in-Gel Loop-Mediated Isothermal Amplification (mgLAMP) System. US Patent No. US20220162686A1 &middot; International Patent No. WO2022115187A1.</p></div></li>
+  </ul>
+</div>
 
-	</body>
+<!-- OUTREACH -->
+<div class="page" id="page-outreach">
+  <h2>Outreach</h2>
+  <div class="outreach-block">
+    <h3>Media Coverage</h3>
+    <ul class="outreach-list">
+      <li>
+        <span class="outreach-date">Jun 2026</span>
+        <div class="outreach-content"><strong>ABC7</strong> &mdash; <a href="https://abc7.com/post/boyle-heights-warehouse-fire-ucla-researchers-race-uncover-environmental-impact-response-cost-reaches-45-million/19391950/" target="_blank">UCLA researchers race to uncover environmental impact of Boyle Heights warehouse fire</a></div>
+      </li>
+      <li>
+        <span class="outreach-date">May 2025</span>
+        <div class="outreach-content"><strong>The Guardian</strong> &mdash; <a href="https://www.theguardian.com/environment/2025/may/14/toxic-wildfire-pollution-infiltrates-homes-of-1bn-people-a-year-study-finds" target="_blank">Toxic wildfire pollution infiltrates homes of 1bn people a year, study finds</a></div>
+      </li>
+    </ul>
+  </div>
+  <div class="outreach-block">
+    <h3>Public Seminars</h3>
+    <ul class="outreach-list">
+      <li>
+        <span class="outreach-date">Jul 2026</span>
+        <div class="outreach-content">California Air Resources Board (CARB) &mdash; <a href="https://www.youtube.com/watch?v=2t2HfVzbDxc" target="_blank">Indoor Air Quality in California: New Evidence &amp; Environmental Justice Implications</a></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.getElementById('btn-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
 </html>
